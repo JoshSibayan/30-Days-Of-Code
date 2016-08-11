@@ -1,0 +1,33 @@
+import java.util.*;
+import java.io.*;
+
+class Solution {
+
+    public static void main(String []argh) {
+    
+        // Read user input and create new HashMap instance
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        Map<String, Integer> hMap = new HashMap<String, Integer>();
+        
+        // Store key and value pairs
+        for(int i = 0; i < n; i++) {
+            String name = in.next();
+            int phone = in.nextInt();
+            hMap.put(name, phone);
+        }
+        
+        // Continue to read user input for each query
+        // Retrieve values for valid keys
+        while(in.hasNext()) {
+            String s = in.next();
+            if(hMap.get(s) == null) {
+                System.out.println("Not found");
+            } else {
+                System.out.println(s + "=" + hMap.get(s));
+            }
+        }
+        in.close();
+        
+    }
+}
