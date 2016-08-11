@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+	public static void main(String[] args) {
+    // Create Scanner object to read input from stdin
+		Scanner scan = new Scanner(System.in); 
+		
+		// Read a full line of input from stdin and save it to inputString variable
+		String inputString = scan.nextLine(); 
+
+		// Close Scanner object, finished reading 
+		scan.close(); 
+      
+		// Print string literal "Hello, World." to stdout.
+		System.out.println("Hello, World.");
+      
+	}
+}
