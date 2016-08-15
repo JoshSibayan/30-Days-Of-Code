@@ -1,0 +1,10 @@
+	// Class constructor to save int array to elements instance variable
+	public Difference(int[] elements) {
+      this.elements = elements;
+  }
+
+  // Calculate maximum absolute difference between two integers |a - b|
+  public void computeDifference() {
+      Arrays.sort(elements);
+      maximumDifference = elements[elements.length-1] - elements[0];
+  }
