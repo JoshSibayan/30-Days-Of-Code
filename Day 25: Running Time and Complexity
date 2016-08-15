@@ -1,0 +1,29 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in);
+        int length = input.nextInt();
+        int[] primes = new int[length];
+        for(int i = 0; i < length; i++) {
+            primes[i] = input.nextInt();
+            System.out.println(isPrime(primes[i])? "Prime" : "Not prime");
+        }
+        
+    }
+    
+    private static boolean isPrime(int n) {
+        
+        // If number divisible by number <= root of itself, it is not prime
+        int sq = (int)Math.sqrt(n);
+        for(int i = 2; i <= sq; i++) { if(n % i == 0) return false; }
+        return true;
+        
+    }
+}
