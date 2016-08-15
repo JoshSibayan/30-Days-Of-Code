@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+
+class Node {
+
+	int data;
+	Node next;
+	Node(int d) {
+        data = d;
+        next = null;
+  }
+  
+}
+
+class Solution {
+    
+    // Insert at tail given head reference
+    public static Node insert(Node head, int data) {
+        
+        // Create new node n with data to insert
+        // Set n's next pointer to null
+        // Create new node to hold position of original head pointer        
+        Node n = new Node(data);
+        n.next = null;
+        Node temp = head;
+
+        // Edge case handle when head is empty
+        if(temp == null) {
+            temp = n;
+        // If list holds more nodes, iterate pointer down until the end
+        } else {
+            while(head.next != null) {
+                head = head.next;
+            }
+            // Set pointer at tail of the list equal to n
+            head.next = n;
+        }
+
+        // Return original head pointer of list
+        return temp;
+        
+    }
