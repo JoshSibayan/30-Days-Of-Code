@@ -1,0 +1,15 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // This exercise is widely considered to be lackluster
+    // It consists only of printing sequences that encompass all conditionals
+    public static void main(String[] args) {
+        System.out.print("5\n4 3\n0 1 -1 2\n5 2\n0 1 -1 -2 -3\n9 6\n0 1 -1 2 3 4 5 6 7\n7 5\n0 1 -1 -2 -3 -4 -5\n8 4\n0 1 -1 2 3 4 5 6");
+    }
+    
+}
