@@ -1,0 +1,67 @@
+import java.io.*;
+import java.util.*;
+
+class Node {
+
+    Node left, right;
+    int data;
+    Node(int data) {
+        this.data = data;
+        left = right = null;
+    }
+    
+}
+
+class Solution {
+
+  // Level-order traversal / breadth-first search reads each node from left to right and top to bottom
+	static void levelOrder(Node root) {
+        
+        // Create queue to hold BST nodes and add root node first
+        Queue<Node> queue = new LinkedList();
+        queue.add(root);
+      
+        while(!queue.isEmpty()) {
+            // Retrieve root node, set current equal to it, remove root node, print current data
+            Node current = queue.remove();
+            System.out.print(current.data + " ");
+            // Add left and right children to queue if any exist
+            if (current.left != null) queue.add(current.left);
+            if (current.right != null) queue.add(current.right);
+            // Repeat process until all BST nodes are printed according to BFS specification
+        }
+        
+    }      
+
+
+	public static Node insert(Node root, int data) {
+	
+        if(root == null) {
+            return new Node(data);
+        } else {
+            Node cur;
+            if(data <= root.data) {
+                cur = insert(root.left, data);
+                root.left = cur;
+            } else {
+                cur = insert(root.right, data);
+                root.right = cur;
+            }
+            return root;
+        }
+        
+    }
+    
+    public static void main(String args[]) {
+    
+            Scanner sc = new Scanner(System.in);
+            int T = sc.nextInt();
+            Node root = null;
+            while(T-->0) {
+                int data = sc.nextInt();
+                root = insert(root, data);
+            }
+            levelOrder(root);
+        }	
+        
+}
