@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in);
+        int a_day = input.nextInt();
+        int a_month = input.nextInt();
+        int a_year = input.nextInt();
+        int e_day = input.nextInt();
+        int e_month = input.nextInt();
+        int e_year = input.nextInt();
+        
+        int hackos = 0;
+        
+        // Encompasses all late conditions
+        // Use nested conditionals to check for all constraints
+        if(a_year > e_year || (a_year >= e_year && a_month >= e_month) ) {
+            if(a_year > e_year) {
+                hackos = 10000; 
+            } else if(a_month > e_month) { 
+                hackos = 500 * (a_month - e_month); 
+            } else if(a_day > e_day) { 
+                hackos = 15 * (a_day - e_day); 
+            }
+        }
+        
+        System.out.println(hackos);
+        
+    }
+}
