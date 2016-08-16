@@ -2,42 +2,43 @@ class Student extends Person {
     
 	private int[] testScores;
     
-    // Create student constructor 
-    Student(String firstName, String lastName, int id, int[] testScores) {
+    	// Create student constructor 
+    	Student(String firstName, String lastName, int id, int[] testScores) {
         
-        // Implement firstName, lastName, id methods from person class
-        super(firstName, lastName, id);
-        // Add new testScores parameter to be passed into student argument
-        this.testScores = testScores;
+	        // Implement firstName, lastName, id methods from person class
+	        super(firstName, lastName, id);
+	        // Add new testScores parameter to be passed into student argument
+	        this.testScores = testScores;
         
-    }
+    	}
     
-    public char calculate() {
+   	public char calculate() {
         
-        int avg = 0, sum = 0;
+	        int avg = 0, sum = 0;
+	        
+	        // Calculate average, find sum through testScores array values
+	        for(int i = 0; i < testScores.length; i++) {
+	            sum = sum + testScores[i];
+	        }
+	        avg = sum / testScores.length;
+	        
+	        // Return appropriate grade when proper conditions met
+	        if(avg >= 90 && avg <= 100) {
+	            return 'O';
+	        } else if(avg >= 80 && avg < 90) {
+	            return 'E';
+	        } else if(avg >= 70 && avg < 80) {
+	            return 'A';
+	        } else if(avg >= 55 && avg < 70) {
+	            return 'P';
+	        } else if(avg >= 40 && avg < 55) {
+	            return 'D';
+	        } else if(avg >= 0 && avg < 40) {
+	            return 'T';
+	        } else {
+	            return 0;
+	        }
         
-        // Calculate average, find sum through testScores array values
-        for(int i = 0; i < testScores.length; i++) {
-            sum = sum + testScores[i];
-        }
-        avg = sum / testScores.length;
-        
-        // Return appropriate grade when proper conditions met
-        if(avg >= 90 && avg <= 100) {
-            return 'O';
-        } else if(avg >= 80 && avg < 90) {
-            return 'E';
-        } else if(avg >= 70 && avg < 80) {
-            return 'A';
-        } else if(avg >= 55 && avg < 70) {
-            return 'P';
-        } else if(avg >= 40 && avg < 55) {
-            return 'D';
-        } else if(avg >= 0 && avg < 40) {
-            return 'T';
-        } else {
-            return 0;
-        }
     }
     
 }
