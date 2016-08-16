@@ -7,7 +7,8 @@ import java.util.regex.*;
 public class Solution {
 
 	public static void main(String[] args) {
-    // Create Scanner object to read input from stdin
+	
+    		// Create Scanner object to read input from stdin
 		Scanner scan = new Scanner(System.in); 
 		
 		// Read a full line of input from stdin and save it to inputString variable
@@ -20,4 +21,5 @@ public class Solution {
 		System.out.println("Hello, World.");
       
 	}
+	
 }
