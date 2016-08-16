@@ -7,6 +7,7 @@ import java.util.regex.*;
 public class Solution {
 
     public static void main(String[] args) {
+    
         Scanner input = new Scanner(System.in);
         int values[][] = new int[6][6];
         // Set max to arbitrarily small value
@@ -33,5 +34,7 @@ public class Solution {
             }
         }        
         System.out.println(max);
+        
     }
+    
 }
