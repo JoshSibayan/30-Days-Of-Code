@@ -1,32 +1,35 @@
+import java.io.*;
+import java.util.*;
+
 public class Person {
 
-  private int age;	
+	private int age;	
   
-  // Run checks on initialAge
+  	// Run checks on initialAge
 	public Person(int initialAge) {
 	
-        if(initialAge < 0) {
-            age = 0;
-            System.out.println("Age is not valid, setting age to 0.");
-        }
-        age = initialAge;
+	        if(initialAge < 0) {
+	            age = 0;
+	            System.out.println("Age is not valid, setting age to 0.");
+	        }
+	        age = initialAge;
         
 	}
 
-  // Define criteria for being old
+  	// Define criteria for being old
 	public void amIOld() {
 	
-        if(age < 13) {
-            System.out.println("You are young.");
-        } else if(age >= 13 && age < 18) {
-            System.out.println("You are a teenager.");
-        } else {
-            System.out.println("You are old.");
-        }
+	        if(age < 13) {
+	            System.out.println("You are young.");
+	        } else if(age >= 13 && age < 18) {
+	            System.out.println("You are a teenager.");
+	        } else {
+	            System.out.println("You are old.");
+	        }
         
 	}
 
-  // Increment person's age
+  	// Increment person's age
 	public void yearPasses() { age++; }
 	
 	public static void main(String[] args) {
@@ -44,8 +47,9 @@ public class Person {
 			}
 			p.amIOld();
 			System.out.println();
-    }
+    		}
 		sc.close();
-  }
+		
+  	}
   
 }
